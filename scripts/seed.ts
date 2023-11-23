@@ -3,7 +3,7 @@ import 'dotenv/config';
 
 import { MongoClient } from 'mongodb';
 
-import createUsers from './users';
+import createProfiles from './profiles';
 import createVehicles from './vehicles';
 
 (async () => {
@@ -11,10 +11,10 @@ import createVehicles from './vehicles';
   const db = mongo.db();
   await db.dropDatabase();
 
-  console.log('Creating users...');
-  const userIds = await createUsers(db);
+  console.log('Creating profiles...');
+  const userIds = await createProfiles(db);
   console.log('Creating vehicles...');
-  const vehicleIds = await createVehicles(db, userIds);
+  const vehicleIds = await createVehicles(db);
   console.log('Tables created!');
 
   await mongo.close();

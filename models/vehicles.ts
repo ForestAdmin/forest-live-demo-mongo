@@ -1,7 +1,7 @@
 import Mongoose from 'mongoose';
 
 interface VehiclesInterface {
-  owner_id: string;
+  owner_id: number;
   database: {
     registration_date: Date;
     is_blocked: boolean;
@@ -31,7 +31,7 @@ interface VehiclesInterface {
 
 const vehiclesSchema = new Mongoose.Schema(
   {
-    owner_id: String,
+    owner_id: Number,
     database: {
       registration_date: Date,
       is_blocked: Boolean,

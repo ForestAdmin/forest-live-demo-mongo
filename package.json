@@ -18,11 +18,13 @@
   },
   "dependencies": {
     "@forestadmin/agent": "1.36.4",
-    "@forestadmin/datasource-mongoose": "1.5.30",
+    "@forestadmin/datasource-mongoose": "^1.5.30",
+    "@forestadmin/datasource-sql": "^1.7.41",
     "dotenv": "^16.0.1",
     "knex": "^2.5.1",
     "mongodb": "^6.3.0",
     "mongoose": "^6.10.3",
+    "pg": "^8.11.3",
     "prettier": "^3.0.3",
     "prettier-eslint": "^15.0.1"
   },

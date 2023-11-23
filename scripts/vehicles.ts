@@ -3,11 +3,11 @@ import { faker } from '@faker-js/faker';
 import { Db } from 'mongodb';
 import populate from './utils';
 
-export default async function populateUsers(mongo: Db, userIds: unknown[]): Promise<string[]> {
+export default async function populateUsers(mongo: Db): Promise<string[]> {
   const tableName = 'vehicles';
 
   return populate(mongo, tableName, 15_000, () => ({
-    owner_id: faker.helpers.arrayElement(userIds),
+    owner_id: faker.helpers.rangeToNumber({ min: 1, max: 1456 }),
     properties: {
       color: faker.vehicle.color(),
       manufacturer: faker.vehicle.manufacturer(),

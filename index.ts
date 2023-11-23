@@ -4,6 +4,7 @@ import 'dotenv/config';
 import { createAgent } from '@forestadmin/agent';
 import { createMongooseDataSource } from '@forestadmin/datasource-mongoose';
 import connection from './models';
+import { createSqlDataSource, SslMode } from "@forestadmin/datasource-sql";
 
 // This object allows to configure your Forest Admin panel
 const agent = createAgent<Schema>({
@@ -24,9 +25,48 @@ const agent = createAgent<Schema>({
 agent.addDataSource(
   createMongooseDataSource(connection, {
     flattenMode: 'manual',
-    flattenOptions: { users: { asFields: ['identity'] } },
+    flattenOptions: {
+      profiles: { asFields: ['identity'] },
+      vehicles: { asFields: ['identity'], asModels: ['properties']},
+    },
   }),
 );
+
+agent.addDataSource(
+  createSqlDataSource({
+    sslMode: process.env.DATABASE_SSL_MODE as SslMode,
+    uri: process.env.DATABASE_SQL_URL,
+  }),
+  {
+    include: ['users', 'companies']
+  }
+)
+
+agent.customizeCollection('users', collection => {
+  collection.addOneToManyRelation('profiles', 'profiles', {
+    originKey: 'user_id',
+    originKeyTarget: 'id',
+  })
+
+  collection.addOneToManyRelation('vehicles', 'vehicles', {
+    originKey: 'owner_id',
+    originKeyTarget: 'id',
+  })
+})
+
+agent.customizeCollection('profiles', collection => {
+  collection.addManyToOneRelation('user', 'users', {
+    foreignKey: 'user_id',
+    foreignKeyTarget: 'id',
+  })
+})
+
+agent.customizeCollection('vehicles', collection => {
+  collection.addManyToOneRelation('user', 'users', {
+    foreignKey: 'owner_id',
+    foreignKeyTarget: 'id',
+  })
+})
 
 // Expose an HTTP endpoint.
 agent.mountOnStandaloneServer(Number(process.env.APPLICATION_PORT));
