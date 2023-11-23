@@ -12,7 +12,7 @@ export default async function populateUsers(mongo: Db, userIds: unknown[]): Prom
       color: faker.vehicle.color(),
       manufacturer: faker.vehicle.manufacturer(),
       model: faker.vehicle.model(),
-      type: faker.vehicle.type(),
+      vc_type: faker.vehicle.type(),
       engine: {
         fuel: faker.vehicle.fuel(),
         power: `${faker.number.int({ min: 1, max: 500 })} HP`,
