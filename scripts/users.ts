@@ -6,8 +6,6 @@ import populate from './utils';
 export default async function populateUsers(mongo: Db): Promise<string[]> {
   const tableName = 'users';
 
-  await mongo.dropCollection(tableName);
-
   return populate(mongo, tableName, 15_000, () => ({
     identity: {
       lastname: faker.person.lastName(),
