@@ -560,6 +560,14 @@
     express "^4.17.1"
     fastify-plugin "^3.0.0"
 
+"@forestadmin-experimental/live-demo-blocker@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@forestadmin-experimental/live-demo-blocker/-/live-demo-blocker-1.1.4.tgz#f936a80f82a19d5f339dde821cc7ecfe33e36d99"
+  integrity sha512-rQnHI336Vw02yn7pElxvrCaVjLQZV+ZYZhI4PcmdcXAFJKcghb6yRwgYEqGcrLLU7ssxdLKRnYy6kZFPs4ORYw==
+  dependencies:
+    "@forestadmin/datasource-customizer" "^1.28.2"
+    "@forestadmin/datasource-toolkit" "^1.21.0"
+
 "@forestadmin/agent@1.36.4":
   version "1.36.4"
   resolved "https://registry.yarnpkg.com/@forestadmin/agent/-/agent-1.36.4.tgz#4b2bbfdd644618389ccc7d363be5df586c0b40d9"
@@ -584,7 +592,7 @@
     superagent "^8.0.6"
     uuid "^9.0.0"
 
-"@forestadmin/datasource-customizer@1.37.4":
+"@forestadmin/datasource-customizer@1.37.4", "@forestadmin/datasource-customizer@^1.28.2":
   version "1.37.4"
   resolved "https://registry.yarnpkg.com/@forestadmin/datasource-customizer/-/datasource-customizer-1.37.4.tgz#52a6e0c4a26729420ac10bedec37208d69e59f17"
   integrity sha512-9m0KAnbJr/LFQAY1N6wBuL5YcfYah3YqhpygyM5IRWKT3ByY+K5N1KW3mTtgoC4T5MBlkWIIWcrJ9ghXFRUnNg==
@@ -623,7 +631,7 @@
     socks "^2.7.1"
     ssh2 "^1.14.0"
 
-"@forestadmin/datasource-toolkit@1.29.0":
+"@forestadmin/datasource-toolkit@1.29.0", "@forestadmin/datasource-toolkit@^1.21.0":
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/@forestadmin/datasource-toolkit/-/datasource-toolkit-1.29.0.tgz#2124ea562e15d20cd63bcb78e600ba397e98259a"
   integrity sha512-GTapHcaqg4rlDlZwWfbfPYSiEYkTh1RB7NF4vK51pxlmunJbheHR4Jj4vus+YwMoCt8SoiAM5OO3D66lVBGSXA==

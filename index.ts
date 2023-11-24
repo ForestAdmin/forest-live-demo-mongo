@@ -5,6 +5,7 @@ import { createAgent } from '@forestadmin/agent';
 import { createMongooseDataSource } from '@forestadmin/datasource-mongoose';
 import connection from './models';
 import { createSqlDataSource, SslMode } from "@forestadmin/datasource-sql";
+const liveDemoBlocker = require('@forestadmin/woodshop-live-demo-blocker').default;
 
 // This object allows to configure your Forest Admin panel
 const agent = createAgent<Schema>({
@@ -41,6 +42,8 @@ agent.addDataSource(
     include: ['users', 'companies']
   }
 )
+
+agent.use(liveDemoBlocker);
 
 agent.customizeCollection('users', collection => {
   collection.addOneToManyRelation('profiles', 'profiles', {
