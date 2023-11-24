@@ -25,11 +25,11 @@ export default async function populateUsers(mongo: Db): Promise<string[]> {
     identity: {
       document: {
         url: faker.helpers.arrayElement([
-          'https://www.beneteau.com/sites/default/files/styles/hero_product/public/2022-09/hero-flyer8SPACEdeck.jpg.webp?itok=xm1kFH7F',
-          'https://www.beneteau.com/sites/default/files/styles/hero_product/public/2022-10/GMR_First44_0521.jpg.webp?itok=qPA-sICh',
-          'https://www.beneteau.com/sites/default/files/styles/hero_product/public/2023-08/intern_hero_desktop-oceanis37-1.jpg.webp?itok=2Puc8aUq',
-          'https://www.beneteau.com/sites/default/files/styles/hero_product/public/2022-09/hero_flyer8sun.jpg.webp?itok=n74pN2gW',
-          'https://www.beneteau.com/sites/default/files/styles/hero_product/public/2023-11/intern_hero_desktop-antares12-1920x640_1.jpg.webp?itok=IFdidcbg',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTayAHIqu64U8E6MxJzlX_73yAq8NlSTKpIvDwgTE4Hnb9RzcybiXWiXo2NhAtrAGOPNvs&usqp=CAU',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KBckd2qmMae10y8Xso-sgsOa2o37IcIjb-FlHIclfW2MP7dGeCHVP9redHwOf1PACsE&usqp=CAU',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkOaTPAJVMd05tI786M1Q5tNy3beduTxmaUV8-NH1Zjb1UwwM_a1FiV-pMyg8DbJA0mZU&usqp=CAU',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSvVqEVHTAIrfEWM4Mcwt_hy4-_S_2RmWEwQjqdUVp3tsUDb1XarT7h5KYXCZlZ4FRgto&usqp=CAU',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQcxoDcbynqt4NYdx3RfzBVthyW33xDvVtFCwBrA6utMv1JpfrwhMEP6UV8tDSJ7_ozlQ&usqp=CAU',
         ]),
       },
       vin: faker.vehicle.vin(),
