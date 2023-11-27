@@ -5,6 +5,7 @@ import { createAgent } from '@forestadmin/agent';
 import { createMongooseDataSource } from '@forestadmin/datasource-mongoose';
 import connection from './models';
 import { createSqlDataSource, SslMode } from "@forestadmin/datasource-sql";
+import { LoggerLevel } from '@forestadmin/datasource-toolkit';
 //import liveDemoBlocker from "@forestadmin-experimental/live-demo-blocker";
 
 // This object allows to configure your Forest Admin panel
@@ -19,6 +20,7 @@ const agent = createAgent<Schema>({
   // Autocompletion of collection names and fields
   typingsPath: './typings.ts',
   typingsMaxDepth: 5,
+  loggerLevel: process.env.LOGGER_LEVEL as LoggerLevel
 });
 
 // Connect your datasources
