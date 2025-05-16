@@ -157,10 +157,10 @@
           "isPrimaryKey": true,
           "isReadOnly": false,
           "isRequired": false,
-          "isSortable": true,
+          "isSortable": false,
           "isVirtual": false,
           "reference": null,
-          "type": "String",
+          "type": "Json",
           "validations": []
         },
         {
@@ -169,7 +169,7 @@
           "field": "contact",
           "integration": null,
           "inverseOf": null,
-          "isFilterable": false,
+          "isFilterable": true,
           "isPrimaryKey": false,
           "isReadOnly": false,
           "isRequired": false,
@@ -185,7 +185,7 @@
           "field": "database",
           "integration": null,
           "inverseOf": null,
-          "isFilterable": false,
+          "isFilterable": true,
           "isPrimaryKey": false,
           "isReadOnly": false,
           "isRequired": false,
@@ -595,10 +595,10 @@
           "isPrimaryKey": true,
           "isReadOnly": false,
           "isRequired": false,
-          "isSortable": true,
+          "isSortable": false,
           "isVirtual": false,
           "reference": null,
-          "type": "String",
+          "type": "Json",
           "validations": []
         },
         {
@@ -607,7 +607,7 @@
           "field": "database",
           "integration": null,
           "inverseOf": null,
-          "isFilterable": false,
+          "isFilterable": true,
           "isPrimaryKey": false,
           "isReadOnly": false,
           "isRequired": false,
@@ -680,11 +680,11 @@
           "isPrimaryKey": false,
           "isReadOnly": false,
           "isRequired": false,
-          "isSortable": true,
+          "isSortable": false,
           "isVirtual": false,
           "reference": "vehicles_properties._id",
           "relationship": "HasOne",
-          "type": "String",
+          "type": "Json",
           "validations": []
         },
         {
@@ -756,7 +756,7 @@
           "field": "engine",
           "integration": null,
           "inverseOf": null,
-          "isFilterable": false,
+          "isFilterable": true,
           "isPrimaryKey": false,
           "isReadOnly": false,
           "isRequired": false,
@@ -822,11 +822,11 @@
           "isPrimaryKey": false,
           "isReadOnly": false,
           "isRequired": true,
-          "isSortable": true,
+          "isSortable": false,
           "isVirtual": false,
           "reference": "vehicles._id",
           "relationship": "BelongsTo",
-          "type": "String",
+          "type": "Json",
           "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
@@ -859,8 +859,8 @@
   ],
   "meta": {
     "liana": "forest-nodejs-agent",
-    "liana_version": "1.36.4",
+    "liana_version": "1.64.0",
     "liana_features": null,
-    "stack": {"engine": "nodejs", "engine_version": "18.14.0"}
+    "stack": {"engine": "nodejs", "engine_version": "22.11.0"}
   }
 }
